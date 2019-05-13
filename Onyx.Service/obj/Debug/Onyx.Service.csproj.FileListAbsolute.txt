@@ -1,0 +1,13 @@
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Service.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Service.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Core.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Core.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\obj\Debug\Onyx.Service.csprojResolveAssemblyReference.cache
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\obj\Debug\Onyx.Service.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\obj\Debug\Onyx.Service.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Data.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Data.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.xml
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.SqlServer.xml

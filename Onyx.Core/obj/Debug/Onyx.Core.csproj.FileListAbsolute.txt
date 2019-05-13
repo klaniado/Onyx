@@ -1,0 +1,5 @@
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Core\bin\Debug\Onyx.Core.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Core\bin\Debug\Onyx.Core.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Core\obj\Debug\Onyx.Core.csprojResolveAssemblyReference.cache
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Core\obj\Debug\Onyx.Core.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Core\obj\Debug\Onyx.Core.pdb
