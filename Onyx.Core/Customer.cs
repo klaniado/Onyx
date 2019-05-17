@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Onyx.Core
 {
-    public class Usuario
+
+    class Customer
     {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string KeyID { get; set; }
     }
 }
