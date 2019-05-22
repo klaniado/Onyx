@@ -1,35 +1,28 @@
-﻿@model Onyx.Models.Customer 
-@model Onyx.Models.CustomerSettingModels
+﻿@model Onyx.Models.CustomerSettingModels
 
 @{
-    ViewBag.Title = "DetailSetting";
+    ViewBag.Title = "Detail Setting";
 }
 
 <h2>DetailSetting</h2>
 
-<div>
-    <h4>Customer</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+@using (Html.BeginForm("DetailSettings", "Customer", FormMethod.Post))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Customer Settings Details</th>
+        </tr>
+        <tr>
+            <td>Buscar: </td>
+            <td>
+                @Html.TextBoxFor(m => m.KeyID)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.KeyID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KeyID)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+}

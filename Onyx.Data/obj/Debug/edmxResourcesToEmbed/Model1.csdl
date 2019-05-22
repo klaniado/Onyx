@@ -12,12 +12,12 @@
     <Key>
       <PropertyRef Name="CustomerSettingID" />
     </Key>
-    <Property Name="CustomerSettingID" Type="Int32" Nullable="false" />
-    <Property Name="KeyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerSettingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeyID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
     <Property Name="Value" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="OnyxEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="OnyxEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customer" EntityType="Self.Customer" />
     <EntitySet Name="CustomerSetting" EntityType="Self.CustomerSetting" />
   </EntityContainer>

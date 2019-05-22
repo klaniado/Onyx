@@ -11,9 +11,10 @@ namespace Onyx.Data
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class CustomerSetting
     {
+        [Key]
         public int CustomerSettingID { get; set; }
         public int KeyID { get; set; }
         public string Name { get; set; }

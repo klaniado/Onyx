@@ -13,16 +13,16 @@ namespace Onyx.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnyxEntities1 : DbContext
+    public partial class OnyxEntities2 : DbContext
     {
-        public OnyxEntities1()
-            : base("name=OnyxEntities1")
+        public OnyxEntities2()
+            : base("name=OnyxEntities2")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+           // throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Customer> Customer { get; set; }

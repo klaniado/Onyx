@@ -12,8 +12,8 @@
     <Key>
       <PropertyRef Name="CustomerSettingID" />
     </Key>
-    <Property Name="CustomerSettingID" Type="int" Nullable="false" />
-    <Property Name="KeyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerSettingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KeyID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nchar" MaxLength="30" />
     <Property Name="Value" Type="nchar" MaxLength="30" />
   </EntityType>

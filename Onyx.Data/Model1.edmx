@@ -17,8 +17,8 @@
           <Key>
             <PropertyRef Name="CustomerSettingID" />
           </Key>
-          <Property Name="CustomerSettingID" Type="int" Nullable="false" />
-          <Property Name="KeyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerSettingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KeyID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="30" />
           <Property Name="Value" Type="nchar" MaxLength="30" />
         </EntityType>
@@ -46,12 +46,12 @@ warning 6035: The relationship 'FK_Customer_CustomerSetting' has columns that ar
           <Key>
             <PropertyRef Name="CustomerSettingID" />
           </Key>
-          <Property Name="CustomerSettingID" Type="Int32" Nullable="false" />
-          <Property Name="KeyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSettingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KeyID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="Value" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="OnyxEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OnyxEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customer" EntityType="Self.Customer" />
           <EntitySet Name="CustomerSetting" EntityType="Self.CustomerSetting" />
         </EntityContainer>
@@ -60,7 +60,7 @@ warning 6035: The relationship 'FK_Customer_CustomerSetting' has columns that ar
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OnyxModel1StoreContainer" CdmEntityContainer="OnyxEntities1">
+        <EntityContainerMapping StorageEntityContainer="OnyxModel1StoreContainer" CdmEntityContainer="OnyxEntities2">
           <EntitySetMapping Name="Customer">
             <EntityTypeMapping TypeName="OnyxModel1.Customer">
               <MappingFragment StoreEntitySet="Customer">
