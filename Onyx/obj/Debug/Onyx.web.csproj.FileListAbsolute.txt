@@ -86,3 +86,9 @@ c:\users\kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\Onyx.Core.pdb
 c:\users\kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\Onyx.Service.pdb
 c:\users\kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\Onyx.Data.dll
 c:\users\kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\Onyx.Data.pdb
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\CacheManager.Core.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\CacheManager.SystemRuntimeCaching.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\CacheManager.Core.xml
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx\bin\CacheManager.SystemRuntimeCaching.xml
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx\bin\Onyx.Web.Framework.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx\bin\Onyx.Web.Framework.pdb

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Onyx.Core
 {
 
-    class Customer
+    public partial class Customer
     {
-        public string ID { get; set; }
+        public int CustomerID { get; set; }
         public string Name { get; set; }
-        public string KeyID { get; set; }
+        public int KeyID { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.SessionState;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -13,6 +14,7 @@ using Onyx.Core;
 using Onyx.Data;
 using Onyx.Service;
 using Onyx.Models;
+using Onyx.Web.Framework;
 
 namespace Onyx.Controllers
 {
@@ -22,7 +24,7 @@ namespace Onyx.Controllers
         public ActionResult Detail(int id)
         {
             var traer = new CustomerService();
-            var res = traer.GetCustomerSetting(id);
+            var res = traer.GetCustomerSettingByID(id);
             var model = new CustomerSettingModels();
             model.CustomerSettingID = res.CustomerSettingID;
             model.KeyID = res.KeyID;
@@ -35,24 +37,27 @@ namespace Onyx.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult DetailSettings(CustomerSettings model)
+        [HttpGet]
+        public ActionResult DetailSettings(CustomerSetting model,int? page)
         {
-            var lista = new CustomerService();
-            var a = lista.GetCustomerSettings(model.KeyID);
-            List<CustomerSettingModels> viewmodel = new List<CustomerSettingModels>();
-            foreach (var e in a)
+            var user = new CustomerService();
+            if (true)//AdminLogueado()==1)
             {
-                var elem = new CustomerSettingModels();
-                elem.CustomerSettingID = e.CustomerSettingID;
-                elem.KeyID = e.KeyID;
-                elem.Name = e.Name;
-                elem.Value = e.Value;
-
-
-                viewmodel.Add(elem);
+                var lista = new CustomerService();
+                var listaCompleta = lista.GetCustomerSettings(model.KeyID);
+                var paginador=new Paginador(listaCompleta.Count(),5);
+                var viewModel = new PaginadorViewModel
+                {
+                    Items = listaCompleta.Skip((paginador.CurrentPage - 1) * paginador.PageSize).Take(paginador.PageSize),
+                    Paginador = paginador
+                };
+                return View(viewModel);
             }
-            return View(viewmodel);
+            else
+            {
+                //return View("NAAAAAAAAAAAA");
+            }
+
         }
         public ActionResult Create()
         {
@@ -67,19 +72,28 @@ namespace Onyx.Controllers
             elem.Name = e.Name;
             elem.Value = e.Value;
             conf.SaveCreate(elem);
-            return RedirectToAction("Detail", new { id = e.CustomerSettingID }); 
+            return RedirectToAction("DetailSetting");//RedirectToAction("Detail", new { id = e.CustomerSettingID }); 
             
         }
         public ActionResult Edit(int id)
         {
-            var conf = new CustomerService();
-            var e = conf.GetCustomerSettingToEdit(id);
-            var elem = new CustomerSettingModels();
-            elem.CustomerSettingID = e.CustomerSettingID;
-            elem.KeyID = e.KeyID;
-            elem.Name = e.Name;
-            elem.Value = e.Value;
-            return View(elem);
+            var UserValidated = new ValidateUser();
+                UserValidated = (ValidateUser)Session["Account"];
+            
+            if ((int)UserValidated.Rol == (int)EnumRol.Admin)
+            {
+                var conf = new CustomerService();
+                var e = conf.GetCustomerSettingToEdit(id);
+                var elem = new CustomerSettingModels();
+                elem.CustomerSettingID = e.CustomerSettingID;
+                elem.KeyID = e.KeyID;
+                elem.Name = e.Name;
+                elem.Value = e.Value;
+                return View(elem);
+            }else
+            {
+                return RedirectToAction("Index","Home");
+            }
         }
         [HttpPost]
         public ActionResult Edit(CustomerSettingModels e)

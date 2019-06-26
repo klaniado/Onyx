@@ -1,5 +1,4 @@
-﻿@model IEnumerable <Onyx.Models.CustomerSettingModels>
-
+﻿@model  Onyx.Web.Framework.PaginadorViewModel
 @{
     ViewBag.Title = "DetailSettings";
 }
@@ -10,44 +9,77 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    @foreach (var item in Model.Items)
+    {
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerSettingID)
+            @Html.DisplayNameFor(model => item.KeyID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => item.CustomerSettingID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.KeyID)
+            @Html.DisplayNameFor(model => item.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Value)
+            @Html.DisplayNameFor(model => item.Value)
         </th>
         <th>
             @Html.DisplayText("Configuraciones")
         </th>
     </tr>
+    }
 
-@foreach (var item in Model) {
+@foreach (var elem in Model.Items) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerSettingID)
+            @Html.DisplayFor(modelItem => elem.CustomerSettingID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => elem.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.KeyID)
+            @Html.DisplayFor(modelItem => elem.KeyID)
         </td>
         <td>
-           @Html.DisplayFor(modelItem => item.Value)
+           @Html.DisplayFor(modelItem => elem.Value)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {id=item.CustomerSettingID}) |
-            @Html.ActionLink("Details", "Detail", new { id=item.CustomerSettingID}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerSettingID})
+            @Html.ActionLink("Edit", "Edit", new {id=elem.CustomerSettingID}) |
+            @Html.ActionLink("Details", "Detail", new { id=elem.CustomerSettingID}) |
+            @Html.ActionLink("Delete", "Delete", new { id=elem.CustomerSettingID})
         </td>
     </tr>
 }
 
 </table>
+@if (Model.Paginador.EndPage > 1)
+{
+    <ul class="pagination">
+        @if (Model.Paginador.CurrentPage > 1)
+        {
+            <li>
+                <a href="~/Customer/DetailSettings?KeyID=3">First</a>
+            </li>
+                            <li>
+                                <a href="~/Customer/DetailSettings?KeyID=3&&page=@(Model.Paginador.CurrentPage - 1)">Previous</a>
+                            </li>
+        }
+
+        @for (var page = Model.Paginador.StartPage; page <= Model.Paginador.EndPage; page++)
+        {
+            <li class="@(page == Model.Paginador.CurrentPage ? "active" : "")">
+                <a href="~/Customer/DetailSettings?KeyID=3&&page=@page">@page</a>
+            </li>    }
+
+        @if (Model.Paginador.CurrentPage < Model.Paginador.TotalPages)
+        {
+            <li>
+                <a href="~/Customer/DetailSettings?KeyID=3&&page=@(Model.Paginador.CurrentPage + 1)">Next</a>
+            </li>
+                            <li>
+                                <a href="~/Customer/DetailSettings?KeyID=3&&page=@(Model.Paginador.TotalPages)">Last</a>
+                            </li>
+        }
+    </ul>
+}

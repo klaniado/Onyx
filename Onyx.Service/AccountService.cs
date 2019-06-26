@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Onyx.Core;
 using Onyx.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-
+using CacheManager.Core;
 
 namespace Onyx.Service
 {
@@ -14,30 +15,34 @@ namespace Onyx.Service
     {
         public void SaveUser(Usuario usuario)
         {
-            var objectContext = new OnyxEntities();
+            var objectContext = new ObjectOnyxContext();
             objectContext.Usuarios.Add(usuario);
             objectContext.SaveChanges();
         }
-        public int LoginUser(Usuario usuario)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public ValidateUser ValidateUser(Usuario usuario)
         {
-            var objectContext = new OnyxEntities();
-       //     var list=objectContext.Usuarios.Select(x => x).ToList();
-            var user = objectContext.Usuarios.Where(x => x.Usuario1 == usuario.Usuario1).Select(x=>x).SingleOrDefault();
-            if (user==null)
+            var objectContext = new ObjectOnyxContext();
+            //     var list=objectContext.Usuarios.Select(x => x).ToList();
+            var user = objectContext.Usuarios.Where(x => x.Usuario1 == usuario.Usuario1).Select(x => x).SingleOrDefault();
+            var objeto = new ValidateUser();
+            if (user == null || user.Pasword != usuario.Pasword )
             {
-                return 0;
+                objeto.IsValidated = false;
+                objeto.ErrorMessage = "Usuario o Contraseña incorrectos";
+                objeto.Status = 1;
+                return objeto;
             }
             else
             {
-                if (user.Pasword == usuario.Pasword)
-                {
-                    return 1;
-                }else
-                {
-                    return 2;
-                }
+                objeto.IsValidated = true;
+                objeto.Rol = (EnumRol)user.RolID;
+                return objeto;
             }
-            
         }
     }
 }

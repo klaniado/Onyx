@@ -12,3 +12,7 @@ c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug
 c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.xml
 c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\Onyx.Service.dll.config
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\CacheManager.Core.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\CacheManager.SystemRuntimeCaching.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\CacheManager.Core.xml
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Service\bin\Debug\CacheManager.SystemRuntimeCaching.xml

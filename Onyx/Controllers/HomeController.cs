@@ -13,7 +13,7 @@ namespace Onyx.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult CustomersSettings()
         {
             
 

@@ -3,13 +3,14 @@ using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web.SessionState;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Onyx.Models;
-using Onyx.Data;
+using Onyx.Core;
 using Onyx.Service;
 
 namespace Onyx.Controllers
@@ -24,7 +25,7 @@ namespace Onyx.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -36,9 +37,9 @@ namespace Onyx.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -74,9 +75,13 @@ namespace Onyx.Controllers
             var usuarioModel = new Usuario();
             usuarioModel.Usuario1 = model.Email;
             usuarioModel.Pasword = model.Password;
-            
-            if (logueado.LoginUser(usuarioModel) == 1)
+            var UserValidated = new ValidateUser();
+            UserValidated = logueado.ValidateUser(usuarioModel);
+            if (UserValidated.Rol == EnumRol.Admin || UserValidated.Rol == EnumRol.AdminLogueado)
             {
+
+                Session["Account"] = new ValidateUser();
+                Session["Account"] = UserValidated;
                 if (!ModelState.IsValid)
                 {
                     return View(model);
@@ -98,13 +103,19 @@ namespace Onyx.Controllers
                         ModelState.AddModelError("", "Invalid login attempt.");
                         return View(model);
 
-                    }
+                }
+            }
+            if (logueado.ValidateUser(usuarioModel).Rol == EnumRol.ErrorLogeo)
+            {
+                ModelState.AddModelError("", "Contraseña Incorrecta");
+                return View(model);
             }
             else
             {
-                return View();
+                ModelState.AddModelError("", "Usuario Invalido");
+                return View(model);
             }
-            }
+        }
 
         //
         // GET: /Account/VerifyCode
@@ -135,7 +146,7 @@ namespace Onyx.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -170,7 +181,7 @@ namespace Onyx.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -185,7 +196,7 @@ namespace Onyx.Controllers
                     AccountService _accountService = new AccountService();
                     _accountService.SaveUser(usuario);
 
-                    
+
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

@@ -1,0 +1,13 @@
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Web.Framework.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Web.Framework.pdb
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Core.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Data.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Service.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\EntityFramework.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Core.pdb
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Data.pdb
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\Onyx.Service.pdb
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\bin\Debug\EntityFramework.xml
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\obj\Debug\Onyx.Web.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\obj\Debug\Onyx.Web.Framework.dll
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\Onyx\Onyx.Web.Framework\obj\Debug\Onyx.Web.Framework.pdb

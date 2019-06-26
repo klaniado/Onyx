@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onyx.Data", "Onyx.Data\Onyx
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onyx.Service", "Onyx.Service\Onyx.Service.csproj", "{0B5C86FA-203B-4B9B-AD42-8D9E260215D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onyx.Web.Framework", "Onyx.Web.Framework\Onyx.Web.Framework.csproj", "{2AAE9DAA-0E84-4FC5-B51F-7870F34FACB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0B5C86FA-203B-4B9B-AD42-8D9E260215D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B5C86FA-203B-4B9B-AD42-8D9E260215D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B5C86FA-203B-4B9B-AD42-8D9E260215D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AAE9DAA-0E84-4FC5-B51F-7870F34FACB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AAE9DAA-0E84-4FC5-B51F-7870F34FACB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AAE9DAA-0E84-4FC5-B51F-7870F34FACB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AAE9DAA-0E84-4FC5-B51F-7870F34FACB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

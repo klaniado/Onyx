@@ -10,3 +10,7 @@ c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\bin\Debug\En
 c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\obj\Debug\Onyx.Data.csprojResolveAssemblyReference.cache
 c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\obj\Debug\Onyx.Data.dll
 c:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\obj\Debug\Onyx.Data.pdb
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\bin\Debug\CacheManager.Core.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\bin\Debug\CacheManager.SystemRuntimeCaching.dll
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\bin\Debug\CacheManager.Core.xml
+C:\Users\Kevin\documents\visual studio 2015\Projects\Onyx\Onyx.Data\bin\Debug\CacheManager.SystemRuntimeCaching.xml

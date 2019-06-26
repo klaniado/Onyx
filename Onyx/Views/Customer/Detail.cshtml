@@ -39,12 +39,13 @@
         </dt>
 
         <dd>
+            @Model.CustomerSettingID
             @Html.DisplayFor(model => model.KeyID)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerSettingID })|
+    @Html.ActionLink("Back to List", "DetailSetting")
 </p>
